@@ -11,13 +11,13 @@ public class UserRegistrationTest {
      */
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
-        boolean result = userRegistration.firstName("Utkarsh");
+        boolean result = userRegistration.firstName("Vanna");
         Assert.assertEquals(true, result);
     }
 
     @Test
     public void givenFirstName_WhenNotProper_ShouldReturnFlase() {
-        boolean result = userRegistration.firstName("utkarsh");
+        boolean result = userRegistration.firstName("vanna");
         Assert.assertEquals(false, result);
     }
     /**
@@ -25,13 +25,13 @@ public class UserRegistrationTest {
      */
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
-        boolean result = userRegistration.lastName("Mishra");
+        boolean result = userRegistration.lastName("Singh");
         Assert.assertEquals(true, result);
     }
 
     @Test
     public void givenLastName_WhenNotProper_ShouldReturnFalse() {
-        boolean result = userRegistration.lastName("mishra");
+        boolean result = userRegistration.lastName("singh");
         Assert.assertEquals(false, result);
 
     }
@@ -89,6 +89,19 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordRule2_WhenNotProper_ShouldReturnFalse() {
         boolean result = userRegistration.passwordRule2("psw@");
+        Assert.assertEquals(false, result);
+    }
+    /**
+     * Unit test for validating password with atleast one numeric number
+     */
+    @Test
+    public void givenPasswordRule3_WhenProper_ShouldReturnTrue() {
+        boolean result = userRegistration.passwordRule3("123Aab123");
+        Assert.assertEquals(true, result);
+    }
+    @Test
+    public void givenPasswordRule3_WhenNotProper_ShouldReturnFalse() {
+        boolean result = userRegistration.passwordRule3("123456789");
         Assert.assertEquals(false, result);
     }
 }
