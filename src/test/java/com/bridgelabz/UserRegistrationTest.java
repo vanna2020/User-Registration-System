@@ -1,7 +1,6 @@
 package com.bridgelabz;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class UserRegistrationTest {
@@ -70,7 +69,7 @@ public class UserRegistrationTest {
      */
     @Test
     public void givenPassword_WhenProper_ShouldReturnTrue() {
-        boolean result = userRegistration.password("password@123");
+        boolean result = userRegistration.password("password");
         Assert.assertEquals(true, result);
     }
     @Test
@@ -78,6 +77,7 @@ public class UserRegistrationTest {
         boolean result = userRegistration.password("psw@");
         Assert.assertEquals(false, result);
     }
+
     /**
      * Unit test for validating password with atleast one upper case
      */
@@ -91,6 +91,7 @@ public class UserRegistrationTest {
         boolean result = userRegistration.passwordRule2("psw@");
         Assert.assertEquals(false, result);
     }
+
     /**
      * Unit test for validating password with atleast one numeric number
      */
@@ -131,5 +132,19 @@ public class UserRegistrationTest {
     public void givenEmail1_WhenNotProper_ShouldReturnFalse() {
         boolean result = userRegistration.emailIdValidator("abc()*@gmail.com");
         Assert.assertEquals(false, result);
+    }
+
+    /**
+     * Unit test for validating mood of the User
+     */
+    @Test
+    public void givenMessage_WhenHappy_ShouldReturnEntrySuccessful() {
+        String result = MoodAnalyser.analyseMood("User is Happy");
+        Assert.assertEquals("Entry Successful", result);
+    }
+    @Test
+    public void givenEmail2_WhenNotProper_ShouldReturnEntryFailed() {
+        String result = MoodAnalyser.analyseMood("User is Sad");
+        Assert.assertEquals("Entry Failed", result);
     }
 }
