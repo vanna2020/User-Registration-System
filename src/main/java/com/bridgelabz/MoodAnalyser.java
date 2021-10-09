@@ -1,6 +1,5 @@
 package com.bridgelabz;
 
-
 public class MoodAnalyser {
 
     public static String analyseMood(String mood) throws MoodAnalyserException {
