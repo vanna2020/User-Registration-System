@@ -11,6 +11,7 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(firstName);
         return matcher.matches();
     }
+
     /*
     Created a method to validate last name
      */
@@ -20,6 +21,7 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(lastName);
         return matcher.matches();
     }
+
     /*
  Created a method to validate E-mail
   */
@@ -29,6 +31,7 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
     /*
      Created a method to validate Mobile Number Format
      */
@@ -38,6 +41,7 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(phoneNumber);
         return matcher.matches();
     }
+
     /*
        Created a method to validate password with minimum 8 character
        */
